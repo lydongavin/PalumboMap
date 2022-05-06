@@ -21,17 +21,8 @@ function init() {
     
     camera.position.set( 99, 30, 310 );
     camera.rotation.y = 180*Math.PI/180;
-    renderer.setClearColor(backgroundcolor);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-    window.addEventListener('resize', () => {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix(); 
-    });
-  
-    addFeatures();
-    render();
+        floor_start();
+
 }
 
 init();
