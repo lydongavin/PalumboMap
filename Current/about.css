@@ -1,0 +1,71 @@
+body {
+  overflow: hidden;
+  user-select: none;
+  font-family: helvetica;
+  font-weight: bold;
+}
+
+#backs {
+  height: 10vh;
+  width: auto;
+  right: 0;
+  z-index: 1000;
+}
+#top {
+  font-size: 4em;
+  text-align: center;
+  color: gold;
+}
+#lydon {
+  left: 2vw;
+}
+#michelle {
+  
+  left: 37vw;
+}
+#sweeney {
+  
+  left: 72vw;
+}
+.spinny {
+  position: absolute;
+  z-index: 3;
+  filter: brightness(0%);
+  opacity: 0;
+  top: 0;
+  left: 50vw;
+  height: 10vh;
+}
+.spinny:hover {
+  filter: brightness(100%);
+  opacity: 1;
+}
+img {
+  position: absolute;
+}
+.person {
+  position: absolute;
+  z-index: 1;
+  filter: brightness(0%);
+  opacity: 0.5;
+  bottom: 0;
+}
+.person:hover {
+  filter: brightness(100%);
+  -webkit-animation: bob 6s linear infinite;
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+@-webkit-keyframes bob {
+  0%, 100% {
+    bottom: 0vh;
+  }
+  25% {
+    transform: rotate(4deg);
+    
+  }
+  50% {
+    bottom: 30vh;
+    transform: rotate(-3deg);
+  }
+}

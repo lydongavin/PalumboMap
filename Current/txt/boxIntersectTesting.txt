@@ -1,0 +1,23 @@
+const material = new THREE.MeshBasicMaterial({
+    map: loader.load('https://threejsfundamentals.org/threejs/resources/images/wall.jpg'),
+  });
+
+
+if (camera.intersectsBox ( camera : items )) {
+  velocity.y = 0;
+}
+
+const box = new THREE.Box3();
+
+ mesh = new THREE.Mesh(
+	new THREE.SphereGeometry(),
+	new THREE.MeshBasicMaterial()
+);
+
+
+// ensure the bounding box is computed for its geometry
+// this should be done only once (assuming static geometries)
+mesh.geometry.computeBoundingBox();
+
+
+box.copy( mesh.geometry.boundingBox ).applyMatrix4( mesh.matrixWorld );

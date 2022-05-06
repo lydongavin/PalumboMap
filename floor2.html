@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Current/main.css">
+</head>
+
+<body>
+    <canvas id="Palumbo"></canvas>
+    <div class="buttons" id="w" onmousedown="mobile(this.id);">w</div>
+    <div class="buttons" id="a" onmousedown="mobile(this.id);">a</div>
+    <div class="buttons" id="s" onmousedown="mobile(this.id);">s</div>
+    <div class="buttons" id="d" onmousedown="mobile(this.id);">d</div>
+    <div class="buttons" id="ArrowUp" onmousedown="mobile(this.id);">↑</div>
+    <div class="buttons" id="ArrowLeft" onmousedown="mobile(this.id);">←</div>
+    <div class="buttons" id="ArrowDown" onmousedown="mobile(this.id);">↓</div>
+    <div class="buttons" id="ArrowRight" onmousedown="mobile(this.id);">→</div>
+    <div id=cords>X: Y: Z:</div>
+    <div id="x"></div>
+    <div id="menu">
+        <div id="ff" class="label"><span id="first">
+                <h1><a>1st Floor</a></h1>(Work In Progress)
+            </span></div>
+        <div id="sf" class="label"><span id="second">
+                <h1><a href="floor2.html">2nd Floor</a></h1>(Minor Construction)
+            </span></div>
+        <div id="tf" class="label"><span id="third">
+                <h1><a href="floor3.html">3rd Floor</a></h1>(Minor Construction)
+            </span></div>
+        <div id="fourthf" class="label"><span id="fourth">
+                <h1><a href="floor4.html">4th Floor<br></a></h1>(Minor Construction)
+            </span></div>
+        <div id="fifthf" class="label"><span id="fifth">
+                <h1><a href="floor5.html">5th Floor</a></h1>
+            </span></div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+<script src="Current/PointerLockControls.js"></script>
+<script src="Current/floor_all.js"></script>
+<script src="Current/floor2.js"></script>
+
+</html>

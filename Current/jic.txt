@@ -1,0 +1,62 @@
+function load_data(filename) {
+  //lets for csv -> array
+  let request = new XMLHttpRequest();
+  request.open('GET', filename, false);
+  request.send();
+  let data = request.responseText;
+  
+  let rows = data.split("\r");
+
+  for (i = 0; i < rows.length; i ++) { 
+    let temp = rows[i].split(",");
+
+    mapData[parseInt(temp[0])] = 
+    {
+      height: parseInt(temp[1]), 
+      width: parseInt(temp[2]), 
+      depth: parseInt(temp[3]), 
+      texture: [temp[4], 
+                temp[5], 
+                temp[6], 
+                temp[7], 
+                temp[8], 
+                temp[9]]
+    };
+  }
+
+  
+}
+
+function build_blocks() {
+  for (let i = 0; i < new_map.length; i ++) {
+    for (let j = 0; j < new_map[0].length; j ++) {
+
+    let f = Math.floor(new_map[i][j]);
+    if (f == "NaN") f = 0;
+
+    if(new_map[i][j] != 0) {
+      
+      let w = UNIT*block_width * mapData[f].width;
+      let d = UNIT*block_length * mapData[f].depth;
+      let h = UNIT*block_height * mapData[f].height;
+
+      items.push(
+        {
+          x: j*UNIT*block_length + w / 2, 
+          y: UNIT*block_height + h / 2, 
+          z: i*UNIT*block_width + d / 2, 
+          width: w, 
+          height: h, 
+          depth: d, 
+          material: [
+            new THREE.MeshBasicMaterial({map: loader.load(mapData[f].texture[0])}), 
+            new THREE.MeshBasicMaterial({map: loader.load(mapData[f].texture[1])}), 
+            new THREE.MeshBasicMaterial({map: loader.load(mapData[f].texture[2])}), 
+            new THREE.MeshBasicMaterial({map: loader.load(mapData[f].texture[3])}), 
+            new THREE.MeshBasicMaterial({map: loader.load(mapData[f].texture[4])}), 
+            new THREE.MeshBasicMaterial({map: loader.load(mapData[f].texture[5])})]
+        });
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+var floors = [
+  'Current/array1.csv','Current/array2.csv','Current/array3.csv','Current/array4.csv','Current/array5.csv','Current/array6.csv'
+];
+
+for (i = 0; i < floors.length; i++){
+
+}
+
+
+
+function create_array(map){
+  let request = new XMLHttpRequest();
+  request.open('GET', map, false);
+  request.send();
+  var text = request.responseText;
+  var map = text.split(",");
+  var new_map = [[1]];
+
+    //Converts CSV File into Array
+  for (i = 0; i < map.length; i ++) {
+      let solution = Math.floor(map[i]);
+      if(map[i].length>1) {
+        new_map.push([1]); 
+      }
+      else {
+        new_map[new_map.length - 1].push(solution);
+      }
+  }  
+}

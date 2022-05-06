@@ -1,0 +1,20 @@
+function build_floors() {
+          for (let i = -1; i < NUM_FLOORS; i ++) {
+            items.push([-10*UNIT, (i*FLOOR_HEIGHT-1)*UNIT, 0*UNIT, 12*UNIT, 0*UNIT, 50*UNIT, {color: 0x00FF00, side: THREE.DoubleSide}]);
+            items.push([11.5*UNIT, (i*FLOOR_HEIGHT-1)*UNIT, -20*UNIT, 31*UNIT, 0*UNIT, 10*UNIT, FLOOR_MAT]);
+            items.push([11.5*UNIT, (i*FLOOR_HEIGHT-1)*UNIT, 20*UNIT, 31*UNIT, 0*UNIT, 10*UNIT, FLOOR_MAT]);
+            items.push([8.5*UNIT, (i*FLOOR_HEIGHT-1)*UNIT, 0*UNIT, 25*UNIT, 0*UNIT, 10*UNIT, FLOOR_MAT]);
+          }
+        }
+
+        function build_walls() {
+          for (let i = 0; i < 5; i ++) {
+            items.push([-19*UNIT, 73.5*UNIT, -1*UNIT, 5*UNIT, (WALL_HEIGHT*UNIT)+1, 50*UNIT, FLOOR_MAT]);
+             //back
+             items.push([3.5*UNIT, 73.5*UNIT, -26*UNIT, 50*UNIT, (WALL_HEIGHT*UNIT)+1, 5*UNIT, FLOOR_MAT]);
+            //front
+            items.push([3.5*UNIT, 73.5*UNIT, 26*UNIT, 50*UNIT, (WALL_HEIGHT*UNIT)+1, 5*UNIT, FLOOR_MAT]);
+           items.push([8.5*UNIT, 73.5*UNIT, -7*UNIT, 25*UNIT, (WALL_HEIGHT*UNIT)+1, 5*UNIT, {color: 0x0000FF, side: THREE.DoubleSide}]);
+           items.push([8.5*UNIT, 73.5*UNIT, 7*UNIT, 25*UNIT, (WALL_HEIGHT*UNIT)+1, 5*UNIT, {color: 0x0000FF, side: THREE.DoubleSide}]);
+          }
+        }

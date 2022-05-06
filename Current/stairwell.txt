@@ -1,0 +1,19 @@
+function stairwell() {
+
+    if(camera.position.x <= 22 && (camera.position.z >= 280 && camera.position.z <= 330)) {
+  window.open('index.html','_self');
+  }
+  
+    if(camera.position.x >= 377 && (camera.position.z >= 279 && camera.position.z <= 330)) {
+  window.open('index.html','_self');
+  }
+  
+    if(camera.position.x <= 24 && (camera.position.z >= 1070 && camera.position.z <= 1121)) {
+  window.open('index.html','_self');
+  }
+  
+    if(camera.position.x >= 356 && (camera.position.z >= 1070 && camera.position.z <= 1111)) {
+  window.open('index.html','_self');
+  }
+  
+}
