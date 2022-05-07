@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 body {
     margin: 0;
     overflow: hidden;
@@ -14,31 +21,29 @@ body {
     user-select: none;
 }
 
-#menu {
-    display: none;
-    background-color: black;
-    height: 100vh;
-    width: 100vw;
-    z-index: 10;
-    background-image: url("GP.jpeg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+img {
+    position: absolute;
 }
 
-#button1 {
-    position: absolute;
-    left: 50%;
+canvas {
+    z-index: 1;
 }
 
-#cords {
-    position: absolute;
-    background-color: white;
-    right: 5%;
+span {
+    white-space: nowrap;
 }
 
-#x {
-    position: absolute;
+a {
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.5s;
+    text-shadow: 5px 5px 10px black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #00ccff;
+    transition-duration: 0.5s;
 }
 
 .buttons {
@@ -64,6 +69,68 @@ body {
     user-select: none;
 }
 
+.mouse_move {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    font-size: 3vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mouse_move h2 {
+    position: absolute;
+    font-size: 100px;
+    color: white;
+}
+
+.mouse_move img {
+    position: absolute;
+}
+
+.label {
+    position: absolute;
+    width: 200vw;
+    color: white;
+    transition-duration: 1s;
+    white-space: nowrap;
+}
+
+.front {
+    z-index: 6;
+    width: 100vw;
+    height: 100vh;
+}
+
+#menu {
+    display: none;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    background-image: url("GP.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#button1 {
+    position: absolute;
+    left: 50%;
+}
+
+#cords {
+    position: absolute;
+    background-color: white;
+    right: 5%;
+}
+
+#x {
+    position: absolute;
+}
+
 #w {
     bottom: 13vh;
     left: 11vh;
@@ -81,10 +148,6 @@ body {
 #d {
     bottom: 2vh;
     left: 22vh;
-}
-
-canvas {
-    z-index: 1;
 }
 
 #ArrowUp {
@@ -107,59 +170,11 @@ canvas {
     right: 0vh;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body {
-    background-color: teal;
-    background-image: url("palumbo.jpeg");
-    background-size: fill;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.mouse_move {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    font-size: 3vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mouse_move h2 {
-    position: absolute;
-    font-size: 100px;
-    color: white;
-}
-
-.mouse_move img {
-    position: absolute;
-}
-
 #stairs {
     width: 120vw;
     height: 120vh;
     height: auto;
     z-index: -1;
-}
-
-span {
-    white-space: nowrap;
-}
-
-.label {
-    position: absolute;
-    width: 200vw;
-    color: white;
-    transition-duration: 1s;
-    white-space: nowrap;
 }
 
 #ff {
@@ -195,19 +210,6 @@ span {
     left: 0vw;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    transition-duration: 0.5s;
-    text-shadow: 5px 5px 10px black;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #00ccff;
-    transition-duration: 0.5s;
-}
-
 #fourthf:hover {
     transition-duration: 1s;
 }
@@ -232,20 +234,6 @@ a:hover {
 #test {
     size: 40;
     position: absolute;
-}
-
-body {
-    overflow: hidden;
-}
-
-img {
-    position: absolute;
-}
-
-.front {
-    z-index: 6;
-    width: 100vw;
-    height: 100vh;
 }
 
 #test {

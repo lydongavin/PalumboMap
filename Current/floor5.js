@@ -15,6 +15,8 @@ function init() {
     load_data('Current/csv/data5.csv');
     camera.position.set(90, 30, 116);
     camera.rotation.y = 180 * Math.PI / 180;
+    //makeSphere(46, 27.25, 741, 'Current/edw.jpeg');
+    //makeBody(46, 24, 741, 'Current/shirt.jpeg');
     floor_start();
 }
 init();

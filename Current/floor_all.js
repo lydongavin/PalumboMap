@@ -336,8 +336,7 @@ function addFeatures() {
         newBody.position.set(x, y, z);
         scene.add(newBody);
     }
-    makeSphere(46, 27.25, 741, 'Current/edw.jpeg');
-    makeBody(46, 24, 741, 'Current/shirt.jpeg');
+    
     //makeSphere( 48, 27.25, 741 );
     //makeBody( 48, 24, 741 );
     //makeSphere( 48, 27.25, 741 );

@@ -1,6 +1,6 @@
 //continuously checks X, Y, and Z position of camera. If in position of stairwell, loads stairwell floor selection page
 function stairwell() {
-    if((camera.position.x <= 357 && (camera.position.z >= 811 && camera.position.z <= 849)) || (camera.position.x <= 20 && (camera.position.z >= 811 && camera.position.z <= 860)) || (camera.position.x <= 21 && (camera.position.z >= 91 && camera.position.z <= 140)) || (camera.position.x >= 385 && (camera.position.z >= 100 && camera.position.z <= 150))) {
+    if((camera.position.x >= 357 && (camera.position.z >= 811 && camera.position.z <= 849)) || (camera.position.x <= 20 && (camera.position.z >= 811 && camera.position.z <= 860)) || (camera.position.x <= 21 && (camera.position.z >= 91 && camera.position.z <= 140)) || (camera.position.x >= 385 && (camera.position.z >= 100 && camera.position.z <= 150))) {
         //window.open('index.html','_self');
         document.getElementById("menu").style.display = "block";
     } else {

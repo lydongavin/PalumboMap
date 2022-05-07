@@ -139,7 +139,7 @@
      height: 100vh;
      background-color: white;
      background-image: url("palumbo.jpeg");
-     background-size: contain;
+     background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
      line-height: 100vh;

@@ -10,7 +10,7 @@ function stairwell() {
 function init() {
     build_newmap('Current/csv/map3.csv');
     load_data('Current/csv/data3.csv');
-    camera.position.set(90, 30, 116);
+    camera.position.set(90, 30, 310);
     camera.rotation.y = 180 * Math.PI / 180;
     floor_start();
 }
