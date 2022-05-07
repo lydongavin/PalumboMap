@@ -1,268 +1,277 @@
 body {
     margin: 0;
     overflow: hidden;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;   
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
 }
+
 #menu {
-  display: none;
-  background-color: black;
-  height: 100vh;
-  width: 100vw;
-  z-index: 10;
-  background-image: url("GP.jpeg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+    display: none;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    background-image: url("GP.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 #button1 {
     position: absolute;
     left: 50%;
 }
 
-#cords{
-  position: absolute;
-  background-color: white;
-  right: 5%;
+#cords {
+    position: absolute;
+    background-color: white;
+    right: 5%;
 }
+
 #x {
-  position: absolute;
+    position: absolute;
 }
+
 .buttons {
-  position: absolute;
-  height: 8vh;
-  width: 8vh;
-  border-radius: 1px;
-  border-style: solid;
-  border-color: black;
-  text-align: center;
-  opacity: 40%;
-  z-index: 4;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; 
+    position: absolute;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 1px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    opacity: 40%;
+    z-index: 4;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 #w {
-  bottom: 13vh;
-  left: 11vh;
+    bottom: 13vh;
+    left: 11vh;
 }
+
 #s {
-  bottom: 2vh;
-  left: 11vh;
+    bottom: 2vh;
+    left: 11vh;
 }
+
 #a {
-  bottom: 2vh;
+    bottom: 2vh;
 }
+
 #d {
-  bottom: 2vh;
-  left: 22vh;
+    bottom: 2vh;
+    left: 22vh;
 }
+
 canvas {
-  z-index: 1;
+    z-index: 1;
 }
 
 #ArrowUp {
-  bottom: 13vh;
-  right: 11vh;
+    bottom: 13vh;
+    right: 11vh;
 }
+
 #ArrowDown {
-  bottom: 2vh;
-  right: 11vh;
+    bottom: 2vh;
+    right: 11vh;
 }
+
 #ArrowLeft {
-  bottom: 2vh;
-  right: 22vh;
+    bottom: 2vh;
+    right: 22vh;
 }
+
 #ArrowRight {
-  bottom: 2vh;
-  right: 0vh;
+    bottom: 2vh;
+    right: 0vh;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: sans-serif;
-      }
-      body {
-        background-color: teal;
-        background-image: url("palumbo.jpeg");
-        background-size: fill;
-        background-position: center;
-        background-repeat: no-repeat;
-
-      }
-      .mouse_move {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        font-size: 3vh;
-        
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .mouse_move h2 {
-        position: absolute;
-        font-size: 100px;
-        color: white;
-      }
-  
-      .mouse_move img {
-        position: absolute;
-      }
-
-     #stairs {  
-     width: 120vw;
-     height: 120vh;
-     height: auto;  
-     z-index: -1;
-     }
-
-      span {
-            white-space: nowrap; 
-      }
-      .label {
-        position: absolute;
-        width: 200vw;
-        color: white;
-        transition-duration: 1s;
-        white-space: nowrap; 
-      }
-      #ff {
-        top: 70vh;
-        left: 0px;
-        
-      }
-      
-      #first, #second, #third, #fourth, #fifth, #construction {
-        width: 100vw;
-        display: inline-block;
-        text-align: center;
-        z-index: 2;
-        text-shadow: 5px 5px 5px black;
-      }
-
-
-      #sf {
-        top: 55vh;
-        left: 0vw;
-        
-      }
-      
-      #tf {
-        top: 40vh;
-        left: 0vw;
-      }
-      
-      #fourthf {
-        top: 25vh;
-        left: 0vw;
-      }
-      a{
-        text-decoration: none;
-        color: white;
-        transition-duration: 0.5s;
-        text-shadow: 5px 5px 10px black;
-      }
-
-      a:hover {
-          text-decoration: underline;
-          color: #00ccff;
-          transition-duration: 0.5s;
-      }
-
-      #fourthf:hover {
-        transition-duration: 1s;
-      }
-      #fifthf {
-        top: 10vh;
-        left: 0vw;
-      }
-      #fifthf:hover {
-        transition-duration: 1s;
-      }
-
-    #aboutUs {
-      font-size: (2vh+2vw);
-      position: absolute;
-      top: 90vh;
-      width: 100vw;
-      text-align: right;
-    }
-
-      
-
-     #test {
-       size: 40;
-       position: absolute;
-     }
-
-
-
-
-
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
 
 body {
-  overflow: hidden;
+    background-color: teal;
+    background-image: url("palumbo.jpeg");
+    background-size: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mouse_move {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    font-size: 3vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mouse_move h2 {
+    position: absolute;
+    font-size: 100px;
+    color: white;
+}
+
+.mouse_move img {
+    position: absolute;
+}
+
+#stairs {
+    width: 120vw;
+    height: 120vh;
+    height: auto;
+    z-index: -1;
+}
+
+span {
+    white-space: nowrap;
+}
+
+.label {
+    position: absolute;
+    width: 200vw;
+    color: white;
+    transition-duration: 1s;
+    white-space: nowrap;
+}
+
+#ff {
+    top: 70vh;
+    left: 0px;
+}
+
+#first,
+#second,
+#third,
+#fourth,
+#fifth,
+#construction {
+    width: 100vw;
+    display: inline-block;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 5px 5px 5px black;
+}
+
+#sf {
+    top: 55vh;
+    left: 0vw;
+}
+
+#tf {
+    top: 40vh;
+    left: 0vw;
+}
+
+#fourthf {
+    top: 25vh;
+    left: 0vw;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.5s;
+    text-shadow: 5px 5px 10px black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #00ccff;
+    transition-duration: 0.5s;
+}
+
+#fourthf:hover {
+    transition-duration: 1s;
+}
+
+#fifthf {
+    top: 10vh;
+    left: 0vw;
+}
+
+#fifthf:hover {
+    transition-duration: 1s;
+}
+
+#aboutUs {
+    font-size: (2vh+2vw);
+    position: absolute;
+    top: 90vh;
+    width: 100vw;
+    text-align: right;
+}
+
+#test {
+    size: 40;
+    position: absolute;
+}
+
+body {
+    overflow: hidden;
 }
 
 img {
-  position: absolute;
+    position: absolute;
 }
+
 .front {
-  z-index: 6;
-
-  width: 100vw;
-  height: 100vh;
+    z-index: 6;
+    width: 100vw;
+    height: 100vh;
 }
-
 
 #test {
-  position: absolute;
-  width: 100vw;
+    position: absolute;
+    width: 100vw;
 }
 
 #logo {
-  z-index: 4;
-  height: 30vh;
-  top: 5vh;
-  left: 5vw;
+    z-index: 4;
+    height: 30vh;
+    top: 5vh;
+    left: 5vw;
 }
+
 #logo1 {
-  position: absolute;
-  z-index: 4;
-  height: 30vh;
-  top: 5vh;
-  right: 5vw;
+    position: absolute;
+    z-index: 4;
+    height: 30vh;
+    top: 5vh;
+    right: 5vw;
 }
+
 #board {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background-color: darkcyan;
-  z-index: 3;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: darkcyan;
+    z-index: 3;
 }

@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <link rel="stylesheet" href="Current/style.css">
     <title>Palumbo Map</title>
-  </head>
-  <body id="schoolPalumbo">
-    
-    <div id = "openn" class="mouse_move">
-       <div id="ff" class="label"><span id="first"><h1><a>1st Floor</a></h1>(Work In Progress)</span></div>
-      <div id="sf" class="label"><span id="second"><h1><a href="floor2.html">2nd Floor</a></h1>(Minor Construction)</span></div>
-      <div id="tf" class="label"><span id="third"><h1><a href="floor3.html">3rd Floor</a></h1>(Minor Construction)</span></div>
-      <div id ="fourthf" class="label"><span id="fourth"><h1><a href="floor4.html">4th Floor<br></a></h1>(Minor Construction)</span></div>
-      <div id="fifthf" class="label"><span id="fifth"><h1><a href="floor5.html">5th Floor</a></h1></span></div>
+</head>
 
-      <div id="aboutUs" class="label"><span id="about"><h1><a href="Current/about.html">Meet the Team!</a></h1></span></div>
-
-      <img id="stairs" src="Current/GP.jpeg" class="mouse" value="7"/>
-      <div id = "fronts" class = "front" onclick = "enter()">Enter</div>
+<body id="schoolPalumbo">
+    <div id="openn" class="mouse_move">
+        <div id="ff" class="label"><span id="first">
+                <h1><a>1st Floor</a></h1>(Work In Progress)
+            </span></div>
+        <div id="sf" class="label"><span id="second">
+                <h1><a href="floor2.html">2nd Floor</a></h1>(Minor Construction)
+            </span></div>
+        <div id="tf" class="label"><span id="third">
+                <h1><a href="floor3.html">3rd Floor</a></h1>(Minor Construction)
+            </span></div>
+        <div id="fourthf" class="label"><span id="fourth">
+                <h1><a href="floor4.html">4th Floor<br></a></h1>(Minor Construction)
+            </span></div>
+        <div id="fifthf" class="label"><span id="fifth">
+                <h1><a href="floor5.html">5th Floor</a></h1>
+            </span></div>
+        <div id="aboutUs" class="label"><span id="about">
+                <h1><a href="Current/about.html">Meet the Team!</a></h1>
+            </span></div>
+        <img id="stairs" src="Current/GP.jpeg" class="mouse" value="7" />
+        <div id="fronts" class="front" onclick="enter()">Enter</div>
     </div>
-
-
     <script type="text/javascript">
-      document.addEventListener("mousemove", parallax);
-      function parallax(event) {
-        this.querySelectorAll(".mouse").forEach((shift) => {
-          const position = shift.getAttribute("value");
-          const x = (window.innerWidth - event.pageX * position) / 90;
-          const y = (window.innerHeight - event.pageY * position) / 90;
-  
-          shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
-      }
-      
+        document.addEventListener("mousemove", parallax);
 
+        function parallax(event) {
+            this.querySelectorAll(".mouse").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 90;
+                const y = (window.innerHeight - event.pageY * position) / 90;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        }
     </script>
     <script src="Current/index.js"></script>
-  </body>
+</body>
+
 </html>
