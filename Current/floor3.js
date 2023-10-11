@@ -1,8 +1,31 @@
 //continuously checks X, Y, and Z position of camera. If in position of stairwell, loads stairwell floor selection page
+var gotostair = false;
+document.getElementById("menuback").style.transition = "all 2s";
+function frontdoor() {
+  if(gotostair == true) {
+    document.getElementById("menuback").style.width = "6vw";
+  }
+  else {
+    document.getElementById("menuback").style.width = "100vw";
+  }
+  if(gotostair == true) {
+      gotostair = false;
+      document.getElementById("menu").style.zIndex = "1";
+  }
+  else {
+    setTimeout(() => {
+      gotostair = true;
+      document.getElementById("menu").style.zIndex = "100";
+    }, 2000);
+  }
+}
 function stairwell() {
     if((camera.position.x <= 22 && (camera.position.z >= 280 && camera.position.z <= 330)) || (camera.position.x >= 377 && (camera.position.z >= 279 && camera.position.z <= 330)) || (camera.position.x <= 24 && (camera.position.z >= 1070 && camera.position.z <= 1121)) || (camera.position.x >= 356 && (camera.position.z >= 1070 && camera.position.z <= 1111))) {
         document.getElementById("menu").style.display = "block";
-    } else {
+    } else if(gotostair == true) {
+      document.getElementById("menu").style.display = "block";
+    }
+    else {
         document.getElementById("menu").style.display = "none";
     }
 }

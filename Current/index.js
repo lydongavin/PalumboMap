@@ -1,12 +1,23 @@
 var open = document.getElementsByClassName("mouse_move");
 
+//fadeOutgif(document.getElementById("gif"));
+
+document.getElementById("gif").style.zIndex = "100";
+setTimeout(() => {
+  fadeOutgif(document.getElementById("gif"));
+}, 5000);
+setTimeout(() => {
+  document.getElementById("gif").style.zIndex = "0";
+  
+}, 6500);
+
 function enter() {
     document.getElementById("fronts").style.transition = "all 6s";
     document.getElementById("fronts").innerHTML = "";
     fadeOut(document.getElementById("fronts"));
     setTimeout(() => {
         document.getElementById("fronts").style.display = "none";
-    }, 3000);
+    }, 1000);
     stairs();
 }
 
@@ -17,7 +28,7 @@ function stairs() {
         fadeIns(document.getElementById("openn"));
     }, 500);
     setTimeout(() => {
-        document.getElementById("openn").style.zIndex = "7000";
+        document.getElementById("openn").style.zIndex = "3";
     }, 3000);
 }
 
@@ -46,7 +57,18 @@ function fadeIns(img) {
 function fadeOut(img) {
     img.style.opacity = 1;
     var tick = function() {
-        img.style.opacity = +img.style.opacity - 0.3;
+        img.style.opacity = +img.style.opacity - 0.1;
+        if(+img.style.opacity > 0) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 10000)
+        }
+    };
+    tick();
+}
+
+function fadeOutgif(img) {
+    img.style.opacity = 1;
+    var tick = function() {
+        img.style.opacity = +img.style.opacity - 0.01;
         if(+img.style.opacity > 0) {
             (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 10000)
         }

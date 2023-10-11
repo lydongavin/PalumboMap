@@ -1,11 +1,36 @@
 //continuously checks X, Y, and Z position of camera. If in position of stairwell, loads stairwell floor selection page
+var gotostair = false;
+document.getElementById("menuback").style.transition = "all 2s";
+function frontdoor() {
+  if(gotostair == true) {
+    document.getElementById("menuback").style.width = "6vw";
+  }
+  else {
+    document.getElementById("menuback").style.width = "100vw";
+  }
+  if(gotostair == true) {
+      gotostair = false;
+      document.getElementById("menu").style.zIndex = "1";
+  }
+  else {
+    setTimeout(() => {
+      gotostair = true;
+      document.getElementById("menu").style.zIndex = "100";
+    }, 2000);
+  }
+}
 function stairwell() {
     if((camera.position.x >= 345 && (camera.position.z >= 8 && camera.position.z <= 50)) || (camera.position.x >= 342 && (camera.position.z >= 770 && camera.position.z <= 800)) || (camera.position.x <= 20 && (camera.position.z >= 770 && camera.position.z <= 810)) || (camera.position.x <= 25 && (camera.position.z >= 8 && camera.position.z <= 50))) {
+      
         document.getElementById("menu").style.display = "block";
         //window.open('index.html','_self');
         /*  div.appendChild(img);
           document.getElementById("schoolPalumbo").innerHTML = "";*/
-    } else {
+    }
+    else if(gotostair == true) {
+      document.getElementById("menu").style.display = "block";
+    }
+    else {
         document.getElementById("menu").style.display = "none";
     }
 }

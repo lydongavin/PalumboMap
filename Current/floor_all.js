@@ -44,6 +44,8 @@ let btn1 = document.querySelector("#button1");
 let down = false;
 let keyboard = [];
 let a = true;
+var geometry = new THREE.SphereGeometry(1, 32, 106, 14.5);
+  var geo = new THREE.CylinderGeometry(.5, 1.5, 5, 32, true);
 
 addEventListener('mousedown',(e)=>{
 })
@@ -70,6 +72,8 @@ function render() {
         div.innerHTML = "";
     };
 }
+
+/*
 //Threejs Performance Stats
 (function() {
     let script = document.createElement('script');
@@ -84,6 +88,7 @@ function render() {
     script.src = '//mrdoob.github.io/stats.js/build/stats.min.js';
     document.head.appendChild(script);
 })()
+*/
 
 function build_newmap(filename) {
     //lets for csv -> array
@@ -232,27 +237,41 @@ function mobile(key) {
     })
 }
 
+
+
 function processKeyboard(key) {
     let speed = 50 * key;
     let actualSpeed = speed;
+
+    if (keyboard['=']) {
+      controls.getObject().rotation.x -= 0.05;
+    }
+    if (keyboard['-']) {
+      controls.getObject().rotation.x += 0.05;
+    }
+  
     if(keyboard['ArrowRight']) {
+        controls.getObject().rotation.x = 0;
         controls.getObject().rotation.y -= 0.05;
         move[7].style.backgroundColor = "red";
     } else {
         move[7].style.backgroundColor = "white";
     }
     if(keyboard['ArrowLeft']) {
+        controls.getObject().rotation.x = 0;
         controls.getObject().rotation.y += 0.05;
         move[5].style.backgroundColor = "red";
     } else {
         move[5].style.backgroundColor = "white";
     }
     if(keyboard['w']) {
+        //controls.getObject().rotation.x += 0.05;
         controls.moveForward(actualSpeed);
         if(cast(0)) controls.moveForward(-actualSpeed);
         move[0].style.backgroundColor = "red";
     } else if(keyboard['ArrowUp']) {
         controls.moveForward(actualSpeed);
+      //controls.getObject().rotation.x -= 0.05;
         if(cast(0)) controls.moveForward(-actualSpeed);
         move[4].style.backgroundColor = "red";
     } else {
@@ -266,6 +285,8 @@ function processKeyboard(key) {
         }
         move[2].style.backgroundColor = "red";
     } else if(keyboard['ArrowDown']) {
+      //controls.getObject().rotation.x += 0.05;
+      
         controls.moveForward(-actualSpeed);
         if(cast(2)) {
             //controls.moveForward(actualSpeed);
@@ -304,43 +325,41 @@ function addCords() {
     document.getElementById("cords").innerHTML = cords;
 }
 //
-function addFeatures() {
-    let light = new THREE.PointLight(0xFFFFFF, 1, 500);
-    light.position.set(10, 0, 25);
-    scene.add(light);
-    light = new THREE.AmbientLight(0x555555);
-    scene.add(light);
-    var geometry = new THREE.SphereGeometry(1, 32, 106, 14.5);
-
-    function makeSphere(x, y, z, pic) {
-        var texture = new THREE.TextureLoader().load(pic);
-        var material = new THREE.MeshBasicMaterial({
-            map: texture,
-            overdraw: 1
-        });
-        var sphere = new THREE.Mesh(geometry, material);
-        var newSphere = sphere.clone();
-        newSphere.position.set(x, y, z);
-        scene.add(newSphere);
-    }
-    var geo = new THREE.CylinderGeometry(.5, 1.5, 5, 32, true);
-
-    function makeBody(x, y, z, pic) {
-        var texture = new THREE.TextureLoader().load(pic);
-        var mat = new THREE.MeshBasicMaterial({
-            map: texture,
-            overdraw: 1
-        });
-        var cylinder = new THREE.Mesh(geo, mat);
-        var newBody = cylinder.clone();
-        newBody.position.set(x, y, z);
-        scene.add(newBody);
-    }
-    
-    //makeSphere( 48, 27.25, 741 );
-    //makeBody( 48, 24, 741 );
-    //makeSphere( 48, 27.25, 741 );
-    //makeBody( 48, 24, 741 );
+function makeSphere(x, y, z, pic) {
+  var texture = new THREE.TextureLoader().load(pic);
+  var material = new THREE.MeshBasicMaterial({
+      map: texture,
+      overdraw: 1
+  });
+  var sphere = new THREE.Mesh(geometry, material);
+  var newSphere = sphere.clone();
+  newSphere.position.set(x, y, z);
+  scene.add(newSphere);
+}
+function makeBody(x, yc, z, pic) {
+  var texture = new THREE.TextureLoader().load(pic);
+  var mat = new THREE.MeshBasicMaterial({
+      map: texture,
+      overdraw: 1
+  });
+  var cylinder = new THREE.Mesh(geo, mat);
+  var newBody = cylinder.clone();
+  newBody.position.set(x, yc, z);
+  scene.add(newBody);
+}
+function addFeatures(x, z, pic, bpic) {
+  let light = new THREE.PointLight(0xFFFFFF, 1, 500);
+  light.position.set(10, 0, 25);
+  scene.add(light);
+  light = new THREE.AmbientLight(0x555555);
+  scene.add(light);
+  
+  //makeSphere( 48, 27.25, 741 );
+  //makeBody( 48, 24, 741 );
+  //makeSphere( 48, 27.25, 741 );
+  //makeBody( 48, 24, 741 );
+  makeSphere(x, 30, z, pic);
+  makeBody(x, 27, z, bpic);
 }
 
 function floor_start() {
@@ -352,6 +371,7 @@ function floor_start() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
     });
-    addFeatures();
     render();
+    
+
 }

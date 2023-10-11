@@ -188,3 +188,32 @@
  #openn {
      z-index: 50;
  }
+
+#gif {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background-color: red;
+  -webkit-user-select: none;
+   /* Safari */
+   -moz-user-select: none;
+   /* Firefox */
+   -ms-user-select: none;
+   /* IE10+/Edge */
+   user-select: none;
+   /* Standard */
+}
+#giff {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  -webkit-user-select: none;
+   /* Safari */
+   -moz-user-select: none;
+   /* Firefox */
+   -ms-user-select: none;
+   /* IE10+/Edge */
+   user-select: none;
+   /* Standard */
+}
