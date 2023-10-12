@@ -3,8 +3,8 @@
 3D walkable map of Academy at Palumbo high school programmed in a Javascript library called three.js
 
 Links: \
-Replit Webview Link (preferred over GH pages): https://palumbomap.lydongavin.repl.co/index.html \
 GitHub Pages Link: https://lydongavin.github.io/PalumboMap/ \
+Replit Webview Link: https://palumbomap.lydongavin.repl.co/index.html \
 Academy at Palumbo Website: https://palumbo.philasd.org/ \
 Three.js : https://threejs.org/
 
